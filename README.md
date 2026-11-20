@@ -6,6 +6,7 @@
 </p>
 
 <p align="center">
+  <a href="https://arxiv.org/pdf/2611.25509">Technical Report (PDF)</a> ·
   <a href="#introduction">Introduction</a> ·
   <a href="#results">Results</a> ·
   <a href="#method">Method</a> ·
