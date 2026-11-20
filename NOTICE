@@ -1,0 +1,14 @@
+LingSante MedGuard data attribution
+=============================
+
+LingSante MedGuard names identify project adaptations of the following sources:
+
+- HealthBench: https://huggingface.co/datasets/openai/healthbench
+- MedHallTune: https://huggingface.co/datasets/russellyq/MedHallTune
+- MedSafetyBench: https://github.com/AI4LIFE-GROUP/med-safety-bench
+- RxSafeBench: https://github.com/CAS-SIAT-XinHai/RxSafeBench
+- MedRepBench: https://huggingface.co/datasets/MedRepBench/MedRepBench
+
+Project code and our original annotations and adaptations are licensed under Apache-2.0.
+Third-party data and images remain subject to their original licenses and terms.
+See LICENSE and the source list above for details.
