@@ -133,7 +133,7 @@ Each JSONL file contains one JSON object per line. `user_question` contains the 
 Clone the repository to download the data:
 
 ```bash
-git clone https://code.alipay.com/guoyi.lgy/LingSante-MedGuard.git /absolute/path/to/LingSante-MedGuard
+git clone https://github.com/inclusionAI/LingSante-MedGuard.git /absolute/path/to/LingSante-MedGuard
 ```
 
 ### Read Task Records
@@ -152,16 +152,23 @@ print(f"Loaded {len(records):,} records")
 print(records[0].keys())
 ```
 
-### Serve a Local Model
+### Get an API Key
 
-Python 3.10+ and a compatible CUDA GPU are required.
+Get an API key from the LingSante MedGuard 4B model page:
+
+- [CN](https://maas.antdigital.com/models/modelservice-1794920007808001899)
+- [Global](https://computrix.ai/sg/models/modelservice-1795168023799001647)
+
+Then run the evaluation script:
 
 ```bash
-pip install -r /absolute/path/to/LingSante-MedGuard/scripts/requirements.txt
-bash /absolute/path/to/LingSante-MedGuard/scripts/deploy_model.sh /absolute/path/to/model
+export MAAS_API_KEY='YOUR_MAAS_API_KEY'
+python3 /absolute/path/to/LingSante-MedGuard/scripts/eval_mgb.py --bench all
 ```
 
-The service defaults to `http://127.0.0.1:8000/v1`, with model name `LingSante MedGuard`. Set `TP` for tensor parallelism. The deployment script starts the model service; it does not run evaluation or scoring.
+# Scope
+
+LingSante MedGuard reviews candidate medical responses within a specified risk scope, using the available context, evidence, and applicable requirements. Its scope is limited to **three medical risk domains** — medical safety (risks that may harm patients or delay appropriate care), medical compliance (conflicts with applicable professional requirements, rules, and procedures), and medical ethics (conflicts with ethical principles and safeguards in medical contexts). It is **not a general-purpose safety model** and is not designed to detect risks outside the medical risk scope, such as political, pornographic, or other general content risks. Its decisions and explanations support downstream review policies; it is not a diagnostic or prescribing system and does not replace qualified clinical judgment or professional responsibility.
 
 ## 📄 License
 
