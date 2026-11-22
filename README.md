@@ -166,6 +166,48 @@ export MAAS_API_KEY='YOUR_MAAS_API_KEY'
 python3 /absolute/path/to/LingSante-MedGuard/scripts/eval_mgb.py --bench all
 ```
 
+### Single API Call
+
+After obtaining an API key, you can send one request directly with `curl`.
+
+#### CN
+
+```bash
+curl -sS -i --max-time 60 \
+  'https://maas-api.antdigital.com/v1/chat/completions' \
+  -H "Authorization: Bearer ${MAAS_API_KEY_CN:?Set the Mainland China API key first}" \
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+    "model": "lingsante-medguard-4b",
+    "stream": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "{\"user_query\":\"For a trip where I only have a layover in a yellow-fever-risk country and I'\''m staying in the airport the whole time, do I need a yellow fever vaccine according to official guidance?\",\"model_response\":\"Official guidance can depend on the country involved and the exact transit arrangements. For an airport layover, requirements may differ based on whether you remain in the international transit area or formally enter the country, so it'\''s best to confirm with a travel medicine clinician or the destination'\''s official health or border guidance for your itinerary.\"}"
+      }
+    ]
+  }'
+```
+
+#### Global
+
+```bash
+curl -sS -i --max-time 60 \
+  'https://maas-api.computrix.ai/v1/chat/completions' \
+  -H "Authorization: Bearer ${MAAS_API_KEY_Global:?Set the Global API key first}" \
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+    "model": "lingsante-medguard-4b",
+    "stream": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "{\"user_query\":\"For a trip where I only have a layover in a yellow-fever-risk country and I'\''m staying in the airport the whole time, do I need a yellow fever vaccine according to official guidance?\",\"model_response\":\"Official guidance can depend on the country involved and the exact transit arrangements. For an airport layover, requirements may differ based on whether you remain in the international transit area or formally enter the country, so it'\''s best to confirm with a travel medicine clinician or the destination'\''s official health or border guidance for your itinerary.\"}"
+      }
+    ]
+  }'
+```
+
 # Scope
 
 LingSante MedGuard reviews candidate medical responses within a specified risk scope, using the available context, evidence, and applicable requirements. Its scope is limited to **three medical risk domains** — medical safety (risks that may harm patients or delay appropriate care), medical compliance (conflicts with applicable professional requirements, rules, and procedures), and medical ethics (conflicts with ethical principles and safeguards in medical contexts). It is **not a general-purpose safety model** and is not designed to detect risks outside the medical risk scope, such as political, pornographic, or other general content risks. Its decisions and explanations support downstream review policies; it is not a diagnostic or prescribing system and does not replace qualified clinical judgment or professional responsibility.
