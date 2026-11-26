@@ -51,19 +51,19 @@ F1 scores (%) on the original experimental suite, including MedSafetyBench. **Fu
 
 | Model | Full F1 | Text F1 |
 |---|---:|---:|
-| **LingSante MedGuard 27B** | **87.4** | **86.6** |
+| **LingSante MedGuard 27B** | **87.4** | **86.5** |
 | Claude-Fable-5 | 84.8 | 84.5 |
 | Gemini-3.1-Pro-preview | 82.9 | 80.9 |
-| **LingSante MedGuard 9B** | **82.5** | **80.4** |
-| **LingSante MedGuard 4B** | **82.3** | **80.5** |
+| **LingSante MedGuard 9B** | **82.4** | **80.3** |
+| **LingSante MedGuard 4B** | **82.3** | **80.4** |
 | GPT-5.6-Sol | 80.3 | 79.2 |
 | Qwen3.5-397B-A17B | 79.7 | 77.8 |
 | Kimi-K3 | 79.3 | 76.3 |
-| Qwen3.5 27B | 79.1 | 76.5 |
-| Qwen3.5 4B | 76.1 | 74.5 |
-| Qwen3.5-35B-A3B | 74.1 | 71.2 |
-| Qwen3.5 9B | 74.0 | 71.4 |
-| Qwen3.6-35B-A3B | 73.1 | 69.3 |
+| Qwen3.5 27B | 78.7 | 76.5 |
+| Qwen3.5 4B | 76.3 | 74.5 |
+| Qwen3.5-35B-A3B | 73.7 | 71.1 |
+| Qwen3.5 9B | 73.8 | 71.4 |
+| Qwen3.6-35B-A3B | 72.5 | 69.2 |
 
 ![Medical risk detection results on the original experimental suite](assets/benchmark-results.png)
 
